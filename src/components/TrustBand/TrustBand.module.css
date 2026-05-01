@@ -1,0 +1,59 @@
+.band {
+  background: #E31E24;
+  padding: 2.5rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.marqueeTrack {
+  display: flex;
+  animation: marqueeScroll 40s linear infinite;
+  width: max-content;
+}
+
+.marqueeGroup {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.item {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.separator {
+  display: inline-block;
+  margin: 0 2.5rem;
+  font-size: 0.7rem;
+  opacity: 0.6;
+  color: #ffffff;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.333%); }
+}
+
+@media (max-width: 768px) {
+  .band {
+    padding: 1.8rem 0;
+  }
+
+  .item {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+
+  .separator {
+    margin: 0 1.5rem;
+  }
+}

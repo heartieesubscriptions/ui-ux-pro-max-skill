@@ -1,0 +1,215 @@
+.mfgWrapper {
+  height: 200vh; /* Increased slightly for smoother feel */
+  position: relative;
+  background: #423E3C;
+  width: 100%;
+  z-index: 10;
+}
+
+.mfgSticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 8% 40px 8%;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.mfgHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mfgHeading {
+  font-family: var(--font-main);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.mfgSubtext {
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.mfgTimelineWrapper {
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mfgTrack {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.mfgProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #E31E24;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.mfgCircle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: #E31E24;
+  border: 4px solid #423E3C;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 3px #E31E24, 0 4px 15px rgba(227, 30, 36, 0.4);
+  z-index: 5;
+  will-change: transform;
+}
+
+.mfgLabels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mfgLabel {
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mfgViewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.mfgCardsTrack {
+  display: flex;
+  gap: 5rem;
+  padding-right: 50vw; /* Significant space to allow full scroll on any screen */
+  will-change: transform;
+}
+
+.mfgCard {
+  flex: 0 0 600px; /* Larger cards for better visual impact */
+  height: 480px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mfgCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+  border-color: rgba(227, 30, 36, 0.4);
+}
+
+.mfgCardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.05) 100%);
+  display: flex;
+  align-items: flex-end;
+}
+
+.mfgCard:hover .mfgCardOverlay {
+  background: linear-gradient(to top, rgba(227, 30, 36, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.05) 100%);
+}
+
+.mfgCardContent {
+  padding: 3rem;
+  width: 100%;
+}
+
+.mfgStepNum {
+  font-family: var(--font-main);
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.1);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.mfgCardTitle {
+  font-family: var(--font-main);
+  font-size: 2rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.mfgCardDesc {
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+}
+
+.mfgPlaceholder {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+}
+
+@media (max-width: 1024px) {
+  .mfgCard {
+    flex: 0 0 450px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mfgWrapper {
+    height: 250vh;
+  }
+  
+  .mfgSticky {
+    padding: 80px 5% 40px 5%;
+  }
+
+  .mfgCard {
+    flex: 0 0 85vw;
+    height: 380px;
+  }
+
+  .mfgLabel {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+  }
+  
+  .mfgStepNum {
+    font-size: 3.5rem;
+  }
+}

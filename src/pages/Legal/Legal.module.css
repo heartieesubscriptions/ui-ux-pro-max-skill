@@ -1,0 +1,117 @@
+.legalPage {
+  background-color: #ffffff;
+  color: #423E3C;
+  overflow-x: hidden;
+  padding-bottom: 6rem;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.revealVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 1. HERO SECTION */
+.hero {
+  padding: 12rem 8% 6rem;
+  background: #fafafa;
+  text-align: center;
+}
+
+.heroLabel {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #E31E24;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  font-family: var(--font-main);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #423E3C;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.accentLine {
+  width: 60px;
+  height: 4px;
+  background: #E31E24;
+  margin: 0 auto 2rem;
+}
+
+.heroIntro {
+  font-family: var(--font-main);
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 2. CONTENT SECTION */
+.contentSection {
+  padding: 6rem 8%;
+  background: #ffffff;
+}
+
+.contentContainer {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.legalSection {
+  margin-bottom: 4rem;
+}
+
+.legalSection:last-child {
+  margin-bottom: 0;
+}
+
+.sectionHeading {
+  font-family: var(--font-main);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #423E3C;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.sectionText {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.sectionText:last-child {
+  margin-bottom: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    padding: 10rem 5% 4rem;
+  }
+  
+  .contentSection {
+    padding: 4rem 5%;
+  }
+
+  .sectionHeading {
+    font-size: 1.5rem;
+  }
+}

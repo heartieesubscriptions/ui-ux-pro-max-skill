@@ -1,0 +1,126 @@
+.finalCta {
+  background: #423E3C;
+  color: #fff;
+  padding: 12rem 8%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.finalCta::before {
+  content: "RAMROS";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-main);
+  font-size: 25vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  z-index: 0;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
+}
+
+.ctaHeading {
+  font-family: var(--font-main);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  margin: 0 auto 1.5rem auto;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  max-width: 1000px;
+}
+
+.ctaSubtext {
+  font-family: var(--font-main);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 2rem;
+  margin-top: 4rem;
+  justify-content: center;
+}
+
+.primaryBtn {
+  background: #E31E24;
+  color: #fff !important;
+  padding: 1.5rem 4rem;
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  box-shadow: 0 10px 20px rgba(227, 30, 36, 0.2);
+}
+
+.primaryBtn:hover {
+  background: #ff2d33;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(227, 30, 36, 0.4);
+}
+
+.secondaryBtn {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  color: #fff !important;
+  padding: 1.5rem 4rem;
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  font-weight: 900;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .finalCta {
+    padding: 8rem 5%;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    padding: 1.2rem 2rem;
+  }
+}

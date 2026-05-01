@@ -1,0 +1,747 @@
+/* Product Detail Page Styles */
+.productDetailPage {
+  background-color: #ffffff;
+  color: #423E3C;
+  font-family: var(--font-main);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section {
+  padding: 10rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sectionHeading {
+  font-family: var(--font-main);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: #423E3C;
+  margin: 0 auto 4rem auto;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.revealVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 1. Hero Section */
+.heroSection .container {
+  max-width: 1400px;
+  padding: 8rem 4rem;
+}
+
+.heroLayout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 10rem;
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.categoryLabel {
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #E31E24;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.mainTitle {
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.heroDesc {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 3rem;
+  max-width: 100%;
+}
+
+.heroLabel {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #E31E24;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.scrollIndicator {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(66, 62, 60, 0.4);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.mouse:hover {
+  border-color: rgba(66, 62, 60, 0.8);
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: #E31E24;
+  border-radius: 2px;
+  animation: scrollWheel 2s infinite;
+}
+
+@keyframes scrollWheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+}
+
+.colorOptions {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.colorLabel {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.colorSwatches {
+  display: flex;
+  gap: 1rem;
+}
+
+.swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px #e0e0e0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.swatchRed {
+  background-color: #E31E24;
+}
+
+.swatchYellow {
+  background-color: #f1c40f;
+}
+
+.swatchBlue {
+  background-color: #2980b9;
+}
+
+.swatchGreen {
+  background-color: #27ae60;
+}
+
+.swatchBlack {
+  background-color: #333;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 1.4rem 3.5rem;
+  border-radius: 6px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  min-width: max-content;
+  white-space: nowrap;
+}
+
+.primaryBtn {
+  background-color: #E31E24;
+  color: white;
+  border: 2px solid #E31E24;
+  box-shadow: 0 15px 35px rgba(227, 30, 36, 0.2);
+}
+
+.primaryBtn:hover {
+  background-color: #ff2d33;
+  border-color: #ff2d33;
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(227, 30, 36, 0.35);
+}
+
+.secondaryBtn {
+  background-color: transparent;
+  color: #111;
+  border: 2px solid #111;
+}
+
+.secondaryBtn:hover {
+  background-color: #111;
+  color: white;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.heroVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.productImageWrapper {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  cursor: pointer;
+}
+
+.imageContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.packagingImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.12));
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.insideImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.productImageWrapper:hover .packagingImage {
+  transform: translateX(-40%) scale(0.9);
+  opacity: 0;
+}
+
+.productImageWrapper:hover .insideImage {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.imageFallback {
+  font-size: 10rem;
+  font-weight: 900;
+  color: #f0f0f0;
+}
+
+/* 2. Quick Product Snapshot */
+.snapshotSection {
+  padding: 8rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.snapshotGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.snapshotItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.snapLabel {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #E31E24;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.snapValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* 3. About this Product */
+.aboutSection {
+  background-color: #ffffff;
+}
+
+.aboutLayout {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aboutText {
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  line-height: 1.8;
+  color: #555;
+}
+
+/* 4. Key Features */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.featureItem {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 3rem;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featureDot {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #E31E24;
+}
+
+.featureTitle {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.featureDesc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* 5. Applications */
+.applicationsSection {
+  background-color: #ffffff;
+}
+
+.appsTypographyList {
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
+  width: 100%;
+  max-width: 1300px;
+  padding: 2rem 0;
+}
+
+.appItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.appIcon {
+  width: 50px;
+  height: 50px;
+  color: #E31E24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.appText {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* 6. Specifications */
+.specsSection {
+  background-color: #fff;
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6rem 4rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.specBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.specLabel {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #E31E24;
+  font-weight: 800;
+}
+
+.specValue {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 900;
+  color: #333;
+  line-height: 1.2;
+}
+
+/* 7. Quality & Certification Proof */
+.certSection {
+  background-color: #ffffff;
+}
+
+.certLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+}
+
+.certSubtext {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.certSection .container {
+  max-width: 1600px;
+}
+
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.marqueeContainer::before,
+.marqueeContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marqueeContainer::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.marqueeContainer::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: scroll 45s linear infinite;
+}
+
+.marqueeGroup {
+  display: flex;
+  gap: 8rem;
+  padding-right: 8rem;
+}
+
+.certItem {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  white-space: nowrap;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 1;
+}
+
+.certItem img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+.certItem:hover {
+  transform: none;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* 8. Why Choose this Product */
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6rem;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.whyItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.whyItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #E31E24;
+}
+
+.whyNum {
+  display: block;
+  font-size: 5rem;
+  font-weight: 900;
+  color: #f0f0f0;
+  margin: 2rem 0 1rem 0;
+  line-height: 1;
+}
+
+.whyTitle {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+.whyDesc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* 9. Related Products */
+.relatedSection {
+  background-color: #ffffff;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  width: 100%;
+}
+
+.relatedCard {
+  background-color: white;
+  padding: 4rem 3rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+.relatedCard:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  transform: translateY(-5px);
+  border-color: #e0e0e0;
+}
+
+.relatedLabel {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.relatedTitle {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.relatedCta {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #E31E24;
+  text-transform: uppercase;
+}
+
+/* Error State */
+.notFound {
+  padding: 15rem 0;
+  text-align: center;
+}
+
+.backBtn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #E31E24;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+
+  .heroLayout,
+  .certLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .mainTitle {
+    font-size: 3rem;
+  }
+
+  .snapshotGrid,
+  .whyGrid,
+  .relatedGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 0;
+  }
+
+  .mainTitle {
+    font-size: 2.5rem;
+  }
+
+  .snapshotGrid,
+  .whyGrid,
+  .relatedGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+  }
+
+  .specsTable th,
+  .specsTable td {
+    display: block;
+    width: 100%;
+  }
+
+  .specsTable th {
+    padding-bottom: 0.5rem;
+    border-bottom: none;
+    color: #888;
+  }
+
+  .specsTable td {
+    padding-top: 0;
+    margin-bottom: 1rem;
+  }
+}

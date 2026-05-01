@@ -1,0 +1,111 @@
+.cursorDot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #E31E24;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+}
+
+.cursorRing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid #423E3C;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+
+.cursorDot.active {
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.cursorRing.active {
+  transform: translate(-50%, -50%) scale(1.2);
+  background-color: rgba(66, 62, 60, 0.1);
+}
+
+.cursorRing.hovering {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(227, 30, 36, 0.05);
+  border-color: #E31E24;
+}
+
+.textWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  animation: rotate 10s linear infinite;
+}
+
+.textWrapper.hide {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.cursorText {
+  font-family: var(--font-main);
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  fill: #423E3C;
+  opacity: 0.6;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+/* Hide default cursor on desktop */
+@media (hover: hover) and (pointer: fine) {
+  :global(*) {
+    cursor: none !important;
+  }
+}
+
+
+/* Show default cursor on mobile */
+@media (max-width: 768px) {
+  .cursorDot, .cursorRing {
+    display: none;
+  }
+  :global(body) {
+    cursor: auto;
+  }
+}
+
+/* White cursor for menu overlay */
+:global(body.menu-open) .cursorDot {
+  background-color: #ffffff !important;
+}
+
+:global(body.menu-open) .cursorRing {
+  border-color: #ffffff !important;
+}
+
+:global(body.menu-open) .cursorRing.hovering {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: #ffffff !important;
+}
